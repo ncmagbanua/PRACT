@@ -1,0 +1,90 @@
+#include <iostream>
+using namespace std;
+
+class Stack {
+private:
+    int arr[5];
+    int top;
+
+public:
+    Stack() {
+        // TODO 1:
+        // Initialize top to indicate an empty stack
+        top = -1;
+    }
+
+    bool isEmpty() {
+        // TODO 2:
+        // Return true if the stack is empty
+        return top == -1;
+    }
+
+    bool isFull() {
+        // TODO 3:
+        // Return true if the stack is full
+        return top == 4;
+    }
+
+    void push(int value) {
+        // TODO 4:
+        // Check if stack is full
+        // If full, print "Stack Full"
+        if (isFull()){
+            cout<<"Stack Full"<<endl;
+        }
+            top++;
+            arr[top]= value;
+        // Otherwise, add the value to the stack
+    }
+
+    void pop() {
+        // TODO 5:
+        // Check if stack is empty
+        // If empty, print "Stack Empty"
+        if (isEmpty()){
+            cout<<"Stack Empty"<<endl;
+        }
+            cout<<"Pop: "<< arr[top]<<endl;
+            arr[top];
+            top--;
+        // Otherwise, remove the top element
+    }
+
+    void peek() {
+        // TODO 6:
+        // Display the top element
+        if (isEmpty()){
+            cout<<"Stack Empty"<<endl;
+        }
+            cout<<"Peek: "<< arr[top]<<endl;
+    }
+
+    void display() {
+        // TODO 7:
+        // Display all elements from top to bottom
+        if (isEmpty()){
+            cout<<"Stack Empty"<<endl;
+        }
+        for (int i = top; i >= 0; i--){
+            cout<<"Show:"<< arr[i]<<endl;
+        }
+    }
+};
+
+int main() {
+    Stack s;
+
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    
+    cout<<"\n --------------"<<endl;
+    s.display();
+    cout<<"\n --------------"<<endl;
+    s.pop();
+
+    s.peek();
+    cout<<"\n --------------"<<endl;
+    s.display();
+    return 0;
+}
